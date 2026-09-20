@@ -325,7 +325,7 @@ This project demonstrates practical use of:
 
 ## Documentation
 
-The `docs/` directory contains the project presentation used to explain the system design, process flow, data structures, and expected behavior.
+The `docs/` directory contains the project documentation used to explain the system design, process flow, data structures, and expected behavior.
 
 ## License
 
