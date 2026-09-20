@@ -1,4 +1,4 @@
-# Smart Hostel Room Allocation & Waiting List Management System
+# Smart Hostel Room Allocation \& Waiting List Management System
 
 A terminal-based **C application** developed for the **CS-162 Data Structures Project** at IIIT Vadodara – International Campus Diu.
 
@@ -10,44 +10,32 @@ Manual hostel allocation becomes difficult when many student applications must b
 
 This project provides a data-structure-driven solution that:
 
-- Registers and validates student applications.
-- Calculates a priority score from GPA and home-to-college distance.
-- Processes students through a Binary Max-Heap.
-- Assigns students to branch-compatible rooms.
-- Maintains a circular waiting list when no suitable room is available.
-- Automatically promotes waiting students when vacancies become available.
-- Supports student search, editing, and deletion.
-- Provides room, pending-application, waiting-list, and branch-wise reports.
-- Dynamically allocates and frees memory.
-
-## Team
-
-| Name | Enrollment No. |
-|---|---|
-| Pranav Borole | 20252501015 |
-| Parth Chavan | 20252501049 |
-| Rahul Kumawat | 20252501061 |
-
-**Course:** CS-162  
-**Department:** Computer Science & Engineering  
-**Institute:** Indian Institute of Information Technology Vadodara / IIITV-ICD  
-**Supervisor:** Dr. Venkata Phanikrishna
+* Registers and validates student applications.
+* Calculates a priority score from GPA and home-to-college distance.
+* Processes students through a Binary Max-Heap.
+* Assigns students to branch-compatible rooms.
+* Maintains a circular waiting list when no suitable room is available.
+* Automatically promotes waiting students when vacancies become available.
+* Supports student search, editing, and deletion.
+* Provides room, pending-application, waiting-list, and branch-wise reports.
+* Dynamically allocates and frees memory.
 
 ## Key Features
 
-### 1. Student Registration
+### 1\. Student Registration
+
 Student records contain:
 
-- Enrollment ID
-- Name
-- Branch
-- GPA
-- Distance from home
-- Calculated priority score
+* Enrollment ID
+* Name
+* Branch
+* GPA
+* Distance from home
+* Calculated priority score
 
 Enrollment IDs are validated to contain numbers only and must be unique.
 
-### 2. Priority-Based Allocation
+### 2\. Priority-Based Allocation
 
 The priority score is calculated as:
 
@@ -59,23 +47,23 @@ Students with higher priority scores are processed first.
 
 For equal priority scores, the system uses the system ID as a tie-breaker.
 
-### 3. Branch-Specific Room Allocation
+### 3\. Branch-Specific Room Allocation
 
 Rooms can be associated with:
 
-- CSE
-- ECE
-- AI
-- MCA
-- MTECH
-- PHD
-- ANY
+* CSE
+* ECE
+* AI
+* MCA
+* MTECH
+* PHD
+* ANY
 
 A room tagged `ANY` can accommodate students from any branch.
 
 When several suitable rooms have free space, the system prefers the room with the highest current occupancy, helping consolidate students into fewer partially occupied rooms.
 
-### 4. Waiting List
+### 4\. Waiting List
 
 If no suitable room is available, the student enters a **Circular Queue**.
 
@@ -83,35 +71,35 @@ When a room becomes available, a matching waiting-list student can be promoted a
 
 Adding a new room also triggers automatic allocation from the waiting list when branch-compatible students are present.
 
-### 5. Student Management
+### 5\. Student Management
 
 The system supports:
 
-- Register
-- Edit
-- Search
-- Delete
+* Register
+* Edit
+* Search
+* Delete
 
 Student records can exist in the room allocation structure, pending Max-Heap, or waiting list.
 
-### 6. Reports
+### 6\. Reports
 
 Available reports include:
 
-- Room status
-- Waiting list
-- Pending applications
-- Branch-wise allocation summary
+* Room status
+* Waiting list
+* Pending applications
+* Branch-wise allocation summary
 
 ## Data Structures Used
 
-| Data Structure | Purpose |
-|---|---|
-| Doubly Linked List | Stores hostel rooms |
-| Singly Linked List | Stores occupants inside each room |
-| Binary Max-Heap | Maintains pending students by priority |
-| Circular Queue | Maintains the waiting list |
-| Dynamic Memory Allocation | Creates and destroys system structures at runtime |
+|Data Structure|Purpose|
+|-|-|
+|Doubly Linked List|Stores hostel rooms|
+|Singly Linked List|Stores occupants inside each room|
+|Binary Max-Heap|Maintains pending students by priority|
+|Circular Queue|Maintains the waiting list|
+|Dynamic Memory Allocation|Creates and destroys system structures at runtime|
 
 ## System Architecture
 
@@ -148,7 +136,7 @@ Extract Highest Priority
        |
        v
 Find Matching Room
-     /     \
+     /     \\
    Found   Not Found
     |          |
     v          v
@@ -208,7 +196,7 @@ smart-hostel-room-allocation/
 │   └── project-presentation.pptx
 │
 ├── legacy/
-│   ├── hostel_v2_3.c
+│   ├── hostel\_v2\_3.c
 │   └── prac.c
 │
 ├── Makefile
@@ -221,8 +209,8 @@ The `src/` directory contains the modular final implementation. The `legacy/` di
 
 ## Requirements
 
-- GCC or another C compiler supporting C11
-- Terminal / command prompt
+* GCC or another C compiler supporting C11
+* Terminal / command prompt
 
 No external libraries are required.
 
@@ -245,7 +233,7 @@ hostel
 ### Using GCC directly
 
 ```bash
-gcc -std=c11 -Wall -Wextra -pedantic src/*.c -o hostel
+gcc -std=c11 -Wall -Wextra -pedantic src/\*.c -o hostel
 ```
 
 ## Run
@@ -259,13 +247,13 @@ gcc -std=c11 -Wall -Wextra -pedantic src/*.c -o hostel
 ### Windows
 
 ```powershell
-.\hostel.exe
+.\\hostel.exe
 ```
 
 Or, if using MinGW:
 
 ```cmd
-gcc -std=c11 -Wall -Wextra -pedantic src\*.c -o hostel.exe
+gcc -std=c11 -Wall -Wextra -pedantic src\\\*.c -o hostel.exe
 hostel.exe
 ```
 
@@ -288,16 +276,16 @@ Additional rooms can be added through the menu.
 
 ## Complexity Overview
 
-| Operation | Main Structure | Typical Complexity |
-|---|---|---|
-| Insert pending student | Max-Heap | O(log n) |
-| Extract highest priority | Max-Heap | O(log n) |
-| Search rooms | Doubly Linked List | O(n) |
-| Append room | Doubly Linked List with tail | O(1) |
-| Enqueue waiting student | Circular Queue | O(1) |
-| Dequeue waiting student | Circular Queue | O(1) |
-| Find matching room | Room traversal | O(r) |
-| View rooms | DLL + occupant traversal | O(r + s) |
+|Operation|Main Structure|Typical Complexity|
+|-|-|-|
+|Insert pending student|Max-Heap|O(log n)|
+|Extract highest priority|Max-Heap|O(log n)|
+|Search rooms|Doubly Linked List|O(n)|
+|Append room|Doubly Linked List with tail|O(1)|
+|Enqueue waiting student|Circular Queue|O(1)|
+|Dequeue waiting student|Circular Queue|O(1)|
+|Find matching room|Room traversal|O(r)|
+|View rooms|DLL + occupant traversal|O(r + s)|
 
 Here, `n` is the number of pending applications, `r` is the number of rooms, and `s` is the number of stored occupants.
 
@@ -323,17 +311,17 @@ If the student's branch has no available room, the student is placed in the wait
 
 This project demonstrates practical use of:
 
-- Structures in C
-- Pointers
-- Dynamic memory allocation
-- Doubly linked lists
-- Singly linked lists
-- Binary heaps
-- Circular queues
-- Searching and traversal
-- Priority-based scheduling
-- Input validation
-- Modular C programming
+* Structures in C
+* Pointers
+* Dynamic memory allocation
+* Doubly linked lists
+* Singly linked lists
+* Binary heaps
+* Circular queues
+* Searching and traversal
+* Priority-based scheduling
+* Input validation
+* Modular C programming
 
 ## Documentation
 
@@ -343,7 +331,8 @@ The `docs/` directory contains the project presentation used to explain the syst
 
 This project is released under the MIT License. See `LICENSE`.
 
----
+\---
 
-**Smart Hostel Room Allocation & Waiting List Management System**  
+**Smart Hostel Room Allocation \& Waiting List Management System**  
 CS-162 Data Structures Project
+
